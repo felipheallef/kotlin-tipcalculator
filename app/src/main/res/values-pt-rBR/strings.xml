@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Calculadora de Gorjeta</string>
+    <string name="hint_amount">Valor</string>
+    <string name="action_calculate">Calcular</string>
+</resources>
