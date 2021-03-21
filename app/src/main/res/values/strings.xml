@@ -2,4 +2,8 @@
     <string name="app_name">Tip Calculator</string>
     <string name="hint_amount">Amount</string>
     <string name="action_calculate">Calculate</string>
+    <string name="label_tip_percentage">How much you want to pay as tip?</string>
+    <string name="text_tip_result">The amount of the tip you will pay is \$%1$.2f</string>
+    <string name="alert_fill_out_all_data">Please, fill out all the fields.</string>
+    <string name="text_app_signature">Tip Calculator\nby Feliphe Allef</string>
 </resources>

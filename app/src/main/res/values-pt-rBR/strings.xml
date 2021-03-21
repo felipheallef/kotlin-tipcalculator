@@ -2,4 +2,8 @@
     <string name="app_name">Calculadora de Gorjeta</string>
     <string name="hint_amount">Valor</string>
     <string name="action_calculate">Calcular</string>
+    <string name="label_tip_percentage">Quanto você quer pagar de gorjeta?</string>
+    <string name="text_tip_result">O valor de gorjeta que você pagará é de R$ %1$.2f</string>
+    <string name="alert_fill_out_all_data">Por favor, preencha todos os campos.</string>
+    <string name="text_app_signature">Calculadora de Gorjeta\npor Feliphe Allef</string>
 </resources>
