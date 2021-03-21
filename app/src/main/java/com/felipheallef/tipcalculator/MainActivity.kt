@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.slider.Slider
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
@@ -14,31 +15,29 @@ class MainActivity : AppCompatActivity() {
         val textView = findViewById<TextView>(R.id.text_main)
         val billEditText = findViewById<EditText>(R.id.edit_text)
         val calculateButton = findViewById<Button>(R.id.button)
-        val tipPercentageSlider = findViewById<SeekBar>(R.id.slider)
+        val tipPercentageSlider = findViewById<Slider>(R.id.slider)
         val tipPercentageLabel = findViewById<TextView>(R.id.label_tip_percentage)
 
-        var tipPercentage = 0.0
+        var tipPercentage = 0F
         var tip: Double
 
         textView.visibility = View.GONE
 
-        tipPercentageSlider.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-
-            override fun onProgressChanged(seek: SeekBar,
-                                           progress: Int, fromUser: Boolean) {
-                // write custom code for progress is changed
-                tipPercentage = progress.toDouble() / 100
+        tipPercentageSlider.addOnSliderTouchListener(object : Slider.OnSliderTouchListener {
+            override fun onStartTrackingTouch(slider: Slider) {
+                // Responds to when slider's touch event is being started
             }
 
-            override fun onStartTrackingTouch(seek: SeekBar) {
-                // write custom code for progress is started
-            }
-
-            override fun onStopTrackingTouch(seek: SeekBar) {
-                // write custom code for progress is stopped
-                tipPercentageLabel.text = getString(R.string.label_tip_percentage) + " (" + seek.progress + "%)"
+            override fun onStopTrackingTouch(slider: Slider) {
+                // Responds to when slider's touch event is being stopped
+                tipPercentageLabel.text = getString(R.string.label_tip_percentage) + " (" + slider.value.toInt() + "%)"
             }
         })
+
+        tipPercentageSlider.addOnChangeListener { _, value, _ ->
+            // Responds to when slider's value is changed
+            tipPercentage = value / 100F
+        }
 
         calculateButton.setOnClickListener {
 
